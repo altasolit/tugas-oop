@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // soal 1
+        // function Person(firstName,lastName,age) {
+        //     this.firstName = firstName;
+        //     this.lastName = lastName;
+        //     this.age = age;
+
+        //     this.showDetails = function(name) {
+        //         console.log(`Hello ${name}, Nama saya ${this.firstName} ${this.lastName} bisa dipanggil juga ${this.firstName}, umur saya ${this.age}`
+        //     );
+        //     }
+        // }
+
+        // const Yovel = new Person("Yovel", "Andreas" , "15");
+        // Yovel.showDetails("me");
+        // const Cynthia = new Person("Cynthia", "Quesenski" , "18");
+        // Cynthia.showDetails("me");
+
+        // soal 2
+        function persegiPanjang(panjang, lebar) {
+            this.panjang = panjang;
+            this.lebar = lebar;
+
+            this.LuasPersegiPanjang = function (){
+                return this.panjang * this.lebar;
+            }
+
+            this.KelilingPersegiPanjang = function (){
+               return 2 * (this.panjang + this.lebar);
+            }
+        }
+        
+        const a = new persegiPanjang(5, 5);
+        console.log("Luas :" + persegiPanjang.LuasPersegiPanjang());
+        console.log("Keliling :" + persegiPanjang.KelilingPersegiPanjang());
+
+
+    </script>
+</body>
+</html>

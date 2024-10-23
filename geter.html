@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // soal 1
+      // class Person {
+      //     constructor() {
+      //     this.firstName;
+      //     this.lastName;
+      //     this.age;
+      //     }
+
+      //     set Fname(value) {
+      //         if (value.length == 0) {
+      //             console.log("Nama tidak boleh kosong");
+      //         } else {
+      //             this.firstName = value;
+      //         }
+      //     }
+
+      //     set Lname(value) {
+      //         if (value.length == 0) {
+      //             console.log("Nama tidak boleh kosong");
+      //         } else {
+      //             this.lastName = value;
+      //         }
+      //     }
+
+      //     set getAge(value) {
+      //         if (value < 0) {
+      //             console.log("Umur tidak boleh kurang dari nol");
+      //         } else {
+      //             this.age = value;
+      //         }
+      //     }
+
+      //     showDetails(name) {
+      //         console.log(`Hello ${name}, Nama saya ${this.firstName} ${this.lastName} bisa dipanggil juga ${this.firstName}, umur saya ${this.age}`
+      //     );
+      //     }
+      // }
+
+      // const Yovel = new Person();
+      // Yovel.Fname = 'yovel';
+      // Yovel.Lname = 'andreas';
+      // Yovel.getAge = 1;
+      // Yovel.showDetails("me");
+      // const Cynthia = new Person();
+      // Cynthia.Fname = 'cynthia';
+      // Cynthia.Lname = 'quesions';
+      // Cynthia.getAge = 2;
+      // Cynthia.showDetails("me");
+
+      // soal 2
+      // class persegiPanjang {
+      //     constructor() {
+      //     this.panjang;
+      //     this.lebar;
+      //     }
+
+      //     set setPanjang(value){
+      //         if (value < 0) {
+      //             console.log("Angka tidak boleh kurang dari nol ");
+      //         } else {
+      //             this.panjang = value;
+      //         }
+      //     }
+
+      //     set setLebar(value){
+      //         if (value < 0) {
+      //             console.log("Angka tidak boleh kurang dari nol ");
+      //         } else {
+      //             this.lebar = value;
+      //         }
+      //     }
+
+      //     LuasPersegiPanjang(){
+      //         return this.panjang * this.lebar;
+      //     }
+
+      //     KelilingPersegiPanjang(){
+      //        return 2 * (this.panjang + this.lebar);
+      //     }
+      // }
+
+      // const a = new persegiPanjang();
+      // a.panjang = -2;
+      // a.lebar = -1;
+      // console.log(a.panjang);
+      // console.log(a.lebar);
+      // console.log("Luas :" +a.LuasPersegiPanjang());
+      // console.log("Keliling :" +a.KelilingPersegiPanjang());
+
+      // saol 3
+      //     class RekeningBank {
+      //     static daftarRekening = []; // Menyimpan semua nomor rekening
+
+      //     constructor(nomorRekening, saldoAwal) {
+      //         this.nomorRekening = nomorRekening; // Menggunakan setter
+      //         this.saldo = saldoAwal;
+      //     }
+
+      //     // Setter untuk nomor rekening
+      //     set nomorRekening(nomor) {
+      //         if (RekeningBank.daftarRekening.includes(nomor)) {
+      //             throw new Error(`Nomor rekening ${nomor} sudah terdaftar.`);
+      //         }
+      //         this._nomorRekening = nomor; // Menyimpan nomor rekening
+      //         RekeningBank.daftarRekening.push(nomor); // Menambahkan nomor rekening ke daftar
+      //     }
+
+      //     // Getter untuk nomor rekening
+      //     get nomorRekening() {
+      //         return this._nomorRekening;
+      //     }
+
+      //     // Method untuk menyetor uang
+      //     setorUang(jumlah) {
+      //         this.saldo += jumlah;
+      //         console.log(`Uang sebesar ${jumlah} disetorkan. Saldo sekarang: ${this.saldo}`);
+      //     }
+
+      //     // Method untuk menarik uang
+      //     tarikUang(jumlah) {
+      //         if (jumlah > this.saldo) {
+      //             console.log(`Saldo tidak cukup untuk menarik ${jumlah}. Saldo sekarang: ${this.saldo}`);
+      //         } else {
+      //             this.saldo -= jumlah;
+      //             console.log(`Uang sebesar ${jumlah} ditarik. Saldo sekarang: ${this.saldo}`);
+      //         }
+      //     }
+
+      //     // Method untuk menampilkan saldo
+      //     cekSaldo() {
+      //         console.log(`Saldo saat ini: ${this.saldo}`);
+      //     }
+      // }
+
+      // // Membuat 3 instance dari class RekeningBank
+      // try {
+      //     const rekening1 = new RekeningBank("001", 1000);
+      //     const rekening2 = new RekeningBank("002", 2000);
+      //     const rekening3 = new RekeningBank("003", 3000);
+
+      //     // Setor uang dan tarik uang dari rekening
+      //     rekening1.setorUang(500);  // Setor 500 ke rekening 1
+      //     rekening1.tarikUang(200);  // Tarik 200 dari rekening 1
+      //     rekening2.setorUang(1000); // Setor 1000 ke rekening 2
+      //     rekening2.tarikUang(3000); // Tarik 3000 dari rekening 2 (saldo tidak cukup)
+      //     rekening3.cekSaldo();      // Cek saldo rekening 3
+
+      //     // Contoh penambahan rekening dengan nomor yang sama
+      //     const rekening4 = new RekeningBank("001", 1500); // Ini akan menghasilkan error
+      // } catch (error) {
+      //     console.log(error.message);
+      // }
+
+      // soal 4
+      //     class Bank {
+      //     constructor(namaBank) {
+      //         this.namaBank = namaBank;
+      //         this._kantorCabang = []; // Menyimpan daftar kantor cabang
+      //     }
+
+      //     // Setter untuk menambah kantor cabang
+      //     set kantorCabang(cabang) {
+      //         if (this._kantorCabang.includes(cabang)) {
+      //             console.log(`Kantor cabang ${cabang} sudah terdaftar di ${this.namaBank}.`);
+      //             return; // Tidak menambahkan cabang yang sudah ada
+      //         }
+      //         this._kantorCabang.push(cabang);
+      //         console.log(`Kantor cabang ${cabang} telah ditambahkan ke ${this.namaBank}.`);
+      //     }
+
+      //     // Getter untuk mendapatkan daftar kantor cabang
+      //     get kantorCabang() {
+      //         return this._kantorCabang;
+      //     }
+
+      //     // Method untuk menghapus kantor cabang
+      //     hapusKantorCabang(cabang) {
+      //         const index = this._kantorCabang.indexOf(cabang);
+      //         if (index > -1) {
+      //             this._kantorCabang.splice(index, 1);
+      //             console.log(`Kantor cabang ${cabang} telah dihapus dari ${this.namaBank}.`);
+      //         } else {
+      //             console.log(`Kantor cabang ${cabang} tidak ditemukan di ${this.namaBank}.`);
+      //         }
+      //     }
+
+      //     // Method untuk menampilkan daftar kantor cabang
+      //     tampilkanKantorCabang() {
+      //         console.log(`Daftar kantor cabang ${this.namaBank}:`);
+      //         if (this._kantorCabang.length === 0) {
+      //             console.log("Tidak ada kantor cabang.");
+      //         } else {
+      //             this._kantorCabang.forEach((cabang, index) => {
+      //                 console.log(`${index + 1}. ${cabang}`);
+      //             });
+      //         }
+      //     }
+      // }
+
+      // // Membuat instance dari class Bank
+      // const bankSaya = new Bank("Bank Maju Jaya");
+
+      // // Menjalankan method-method yang ada
+      // console.log(`Nama Bank: ${bankSaya.namaBank}`);
+
+      // // Menggunakan setter untuk menambah kantor cabang
+      // bankSaya.kantorCabang = "Cabang Pusat";
+      // bankSaya.kantorCabang = "Cabang Utara";
+      // bankSaya.kantorCabang = "Cabang Selatan";
+      // bankSaya.kantorCabang = "Cabang Pusat"; // Mencoba menambah cabang yang sama
+
+      // // Menampilkan daftar kantor cabang
+      // bankSaya.tampilkanKantorCabang();
+
+      // bankSaya.hapusKantorCabang("Cabang Utara");
+      // bankSaya.hapusKantorCabang("Cabang Barat"); // Mencoba menghapus cabang yang tidak ada
+
+      // bankSaya.tampilkanKantorCabang();
+
+      // soal 5
+        // class Book {
+        //     constructor(title, author, year) {
+        //         this.title = title;
+        //         this.author = author;
+        //         this.year = year;
+        //     }
+
+        //     bookDetails() {
+        //         console.log(`Buku ini namanya ${this.title}, nama author adalah ${this.author}, penerbitan buku ini tanggal ${this.year}`);
+        //     }
+        // }
+
+        // class Ebook extends Book {
+        //     constructor(title, author, year, harga) {
+        //         super(title, author, year);
+        //         this.harga = harga; // Set harga using the setter
+        //     }
+
+        //     // Setter for title with validation
+        //     set title(value) {
+        //         if (!value || value.trim() === "") {
+        //             throw new Error("Title tidak boleh kosong");
+        //         }
+        //         this._title = value; // Store the valid title
+        //     }
+
+        //     // Getter for title
+        //     get title() {
+        //         return this._title;
+        //     }
+
+        //     // Setter for harga with validation
+        //     set harga(value) {
+        //         if (typeof value !== 'number') {
+        //             throw new Error("Harga harus berupa angka");
+        //         }
+        //         this._harga = value; // Store the valid harga
+        //     }
+
+        //     // Getter for harga
+        //     get harga() {
+        //         return this._harga;
+        //     }
+
+        //     bookDetails() {
+        //         super.bookDetails();
+        //         console.log(`Ini harga bukunya ${this.harga}`);
+        //     }
+        // }
+
+        // try {
+        //     const buku = new Ebook('buku1', 'author1', 2010, 10000);
+        //     buku.bookDetails();
+        //     // buku.title = ''; // This will throw an error: Title tidak boleh kosong
+        //     // buku.harga = 'seribu'; // This will throw an error: Harga harus berupa angka
+        // } catch (error) {
+        //     console.error(error.message);
+        // }
+
+        // soal 6
+        // class Employee {
+        //     constructor(nama, gaji) {
+        //         this.nama = nama;
+        //         this.gaji = gaji;
+        //     }
+
+        //     hitungGajiTahunan() {
+        //         return `Nama pegawai: ${this.nama} \nGaji bulanan: ${this.gaji}`;
+        //     }
+        // }
+
+        // class Manager extends Employee {
+        //     constructor(nama, gaji, departemen) {
+        //         super(nama, gaji);
+        //         this.departemen = departemen;
+        //     }
+
+        //     set name(value) {
+        //         if (typeof value !== 'string') {
+        //             throw new Error("Nama harus string dan tidak boleh kosong");
+        //         }
+        //         this._nama = value;
+        //     }
+
+        //     get name() {
+        //         return this._nama;
+        //     }
+
+        //     set gaji(value) {
+        //         if ( value <= 0) {
+        //             throw new Error("Gaji harus lebih dari nol");
+        //         }
+        //         this._gaji = value;
+        //     }
+
+        //     get gaji() {
+        //         return this._gaji; // This should call a different variable to avoid recursion
+        //     }
+
+        //     hitungGajiTahunan() {
+        //         const gajiTahunan = this.gaji * 12;
+        //         const bonus = gajiTahunan * 0.1;
+        //         return `Departemen: ${this.departemen} \nBonus (10% dari gaji pokok): ${bonus} \nGaji tahunan: ${gajiTahunan + bonus}`;
+        //     }
+        // }
+
+        //     const manager = new Manager("yo",1000000,"it");
+        //     console.log(manager.hitungGajiTahunan());
+        //     manager.name = ""; // This will throw an error: Nama harus string dan tidak boleh kosong
+        //     manager.gaji = ''; // This will throw an error: Gaji harus berupa angka dan lebih dari nol
+
+        // soal 7
+        // class Product {
+        //     constructor(idProduk, name, price) {
+        //         this.idProduk = idProduk;
+        //         this.name = name; 
+        //         this.price = price; 
+        //     }
+
+        //     totalHarga(qty) {
+        //         return this.price * qty;
+        //     }
+        // }
+
+        // class ElectronicProduk extends Product {
+        //     constructor(idProduk, name, price, masaGaransi) {
+        //         super(idProduk, name, price);
+        //         this.masaGaransi = masaGaransi;
+        //     }
+
+        //     set name(value) {
+        //         if (typeof value !== 'string') {
+        //             throw new Error("Nama harus string");
+        //         }
+        //         this._name = value; 
+        //     }
+
+        //     get name() {
+        //         return this._name; 
+        //     }
+
+        //     set price(value) { 
+        //         if (typeof value !== 'number') {
+        //             throw new Error("Harga harus number");
+        //         }
+        //         this._price = value; 
+        //     }
+
+        //     get price() {
+        //         return this._price; 
+        //     }
+
+        //     totalHarga(qty) {
+        //         return super.totalHarga(qty);
+        //     }
+        // }
+
+        // try {
+        //     const hp = new ElectronicProduk( "1","yovel",100000,"2 yeas");
+        //     // console.log(hp.idProduk);
+        //     // console.log(hp.name);
+        //     // console.log(hp.price);
+        //     // console.log(hp.masaGaransi);
+        //     const totalHarga = hp.totalHarga(3);
+        //     console.log(`Id Produk: ${hp.idProduk} \nNama Produk: ${hp.name}\nHarga Barang: Rp.${hp.price} \nTotal Harga: Rp. ${totalHarga} \nMasa Garansi: ${hp.masaGaransi}`);
+        // } catch (error) {
+        //     console.log(error.message);
+        // }
+
+        // Soal 8 
+    class BankAccount {
+        constructor(nomorRekening, namaNasabah, saldo = 0) {
+            this.nomorRekening = nomorRekening;
+            this.namaNasabah = namaNasabah;
+            this.saldo = saldo;
+        }
+
+        setor(jumlah) {
+            if (jumlah > 0) {
+                this.saldo += jumlah;
+                console.log(`Berhasil menyetor ${jumlah}. Saldo saat ini: ${this.saldo}`);
+            } else {
+                console.log("Jumlah setoran harus lebih dari 0");
+            }
+        }
+
+        tarik(jumlah) {
+            if (jumlah > 0 && jumlah <= this.saldo) {
+                this.saldo -= jumlah;
+                console.log(`Berhasil menarik ${jumlah}. Saldo saat ini: ${this.saldo}`);
+            } else if (jumlah <= 0) {
+                console.log("Jumlah penarikan harus lebih dari 0");
+            } else {
+                console.log("Saldo tidak mencukupi");
+            }
+        }
+
+        transfer(jumlah, rekeningTujuan) {
+            if (jumlah > 0 && jumlah <= this.saldo) {
+                this.saldo -= jumlah;
+                rekeningTujuan.saldo += jumlah;
+                console.log(`Berhasil mentransfer ${jumlah} ke rekening ${rekeningTujuan.nomorRekening}`);
+                console.log(`Saldo saat ini: ${this.saldo}`);
+            } else if (jumlah <= 0) {
+                console.log("Jumlah transfer harus lebih dari 0");
+            } else {
+                console.log("Saldo tidak mencukupi untuk melakukan transfer");
+            }
+        }
+    }
+
+        // Membuat beberapa instance kelas BankAccount
+        const rekening1 = new BankAccount("1234", "John Doe", 1000);
+        const rekening2 = new BankAccount("5678", "Jane Smith", 500);
+
+        // Melakukan operasi
+        console.log("Operasi pada rekening1:");
+        rekening1.setor(500);
+        rekening1.tarik(200);
+        rekening1.transfer(300, rekening2);
+
+        console.log("\nOperasi pada rekening2:");
+        rekening2.setor(100);
+        rekening2.tarik(50);
+        rekening2.transfer(200, rekening1);
+
+        console.log("\nSaldo akhir:");
+        console.log(`Rekening ${rekening1.nomorRekening}: ${rekening1.saldo}`);
+        console.log(`Rekening ${rekening2.nomorRekening}: ${rekening2.saldo}`);
+        
+    </script>
+  </body>
+</html>

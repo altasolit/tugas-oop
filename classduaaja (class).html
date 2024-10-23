@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // soal 1
+        class Person {
+            constructor(firstName,lastName,age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            }
+            showDetails(name) {
+                console.log(`Hello ${name}, Nama saya ${this.firstName} ${this.lastName} bisa dipanggil juga ${this.firstName}, umur saya ${this.age}`
+            );
+            }
+        }
+
+        const Yovel = new Person("Yovel", "Andreas" , "15");
+        Yovel.showDetails("me");
+        const Cynthia = new Person("Cynthia", "Quesenski" , "18");
+        Cynthia.showDetails("me");
+
+        // soal 2
+        // class persegiPanjang {        
+        //     constructor(panjang, lebar) {
+        //     this.panjang = panjang;
+        //     this.lebar = lebar;
+        //     }
+        //     LuasPersegiPanjang(){
+        //         return this.panjang * this.lebar;
+        //     }
+
+        //     KelilingPersegiPanjang(){
+        //        return 2 * (this.panjang + this.lebar);
+        //     }
+        // }
+        
+        // const a = new persegiPanjang(5, 5);
+        // console.log("Luas :" +a.LuasPersegiPanjang());
+        // console.log("Keliling :" +a.KelilingPersegiPanjang());
+
+        // saol 3
+        // class RekeningBank {
+        //     constructor(nomorRekening, saldoAwal) {
+        //         this.nomorRekening = nomorRekening;
+        //         this.saldo = saldoAwal;
+        //     }
+
+        //     // Method untuk menyetor uang
+        //     setorUang(jumlah) {
+        //         this.saldo += jumlah;
+        //         console.log(`Uang sebesar ${jumlah} disetorkan. Saldo sekarang: ${this.saldo}`);
+        //     }
+
+        //     // Method untuk menarik uang
+        //     tarikUang(jumlah) {
+        //         if (jumlah > this.saldo) {
+        //         console.log(`Saldo tidak cukup untuk menarik ${jumlah}. Saldo sekarang: ${this.saldo}`);
+        //         } else {
+        //         this.saldo -= jumlah;
+        //         console.log(`Uang sebesar ${jumlah} ditarik. Saldo sekarang: ${this.saldo}`);
+        //         }
+        //     }
+
+        //     // Method untuk menampilkan saldo
+        //     cekSaldo() {
+        //         console.log(`Saldo saat ini: ${this.saldo}`);
+        //     }
+        // }
+
+        //     // Membuat 3 instance dari class RekeningBank
+        //     let rekening1 = new RekeningBank("001", 1000);
+        //     let rekening2 = new RekeningBank("002", 2000);
+        //     let rekening3 = new RekeningBank("003", 3000);
+
+        //     // Setor uang dan tarik uang dari rekening
+        //     rekening1.setorUang(500);  // Setor 500 ke rekening 1
+        //     rekening1.tarikUang(200);  // Tarik 200 dari rekening 1
+        //     rekening2.setorUang(1000); // Setor 1000 ke rekening 2
+        //     rekening2.tarikUang(3000); // Tarik 3000 dari rekening 2 (saldo tidak cukup)
+        //     rekening3.cekSaldo();      // Cek saldo rekening 3
+
+            // soal 4 
+            class Bank {
+            constructor(namaBank) {
+                this.namaBank = namaBank;
+                this.kantorCabang = [];
+            }
+
+            tambahKantorCabang(cabang) {
+                this.kantorCabang.push(cabang);
+                console.log(`Kantor cabang ${cabang} telah ditambahkan ke ${this.namaBank}.`);
+            }
+
+            hapusKantorCabang(cabang) {
+                const index = this.kantorCabang.indexOf(cabang);
+                if (index > -1) {
+                    this.kantorCabang.splice(index, 1);
+                    console.log(`Kantor cabang ${cabang} telah dihapus dari ${this.namaBank}.`);
+                } else {
+                    console.log(`Kantor cabang ${cabang} tidak ditemukan di ${this.namaBank}.`);
+                }
+            }
+
+            tampilkanKantorCabang() {
+                console.log(`Daftar kantor cabang ${this.namaBank}:`);
+                if (this.kantorCabang.length === 0) {
+                    console.log("Tidak ada kantor cabang.");
+                } else {
+                    this.kantorCabang.forEach((cabang, index) => {
+                        console.log(`${index + 1}. ${cabang}`);
+                    });
+                }
+            }
+        }
+
+        // Membuat instance dari class Bank
+        const bankSaya = new Bank("Bank Maju Jaya");
+
+        // Menjalankan method-method yang ada
+        console.log(`Nama Bank: ${bankSaya.namaBank}`);
+
+        bankSaya.tambahKantorCabang("Cabang Pusat");
+        bankSaya.tambahKantorCabang("Cabang Utara");
+        bankSaya.tambahKantorCabang("Cabang Selatan");
+
+        bankSaya.tampilkanKantorCabang();
+
+        bankSaya.hapusKantorCabang("Cabang Utara");
+        bankSaya.hapusKantorCabang("Cabang Barat"); // Mencoba menghapus cabang yang tidak ada
+
+        bankSaya.tampilkanKantorCabang();
+    </script>
+</body>
+</html>

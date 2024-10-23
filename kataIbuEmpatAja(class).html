@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // soal 5
+        // class Book {
+        //     constructor(title,author,year) {
+        //         this.title = title;
+        //         this.author = author;
+        //         this.year = year;
+        //     }
+        //     bookDetails(name) {
+        //         console.log(`Buku ini namanya ${this.title}, nama author adalah ${this.author}, penerbitan buku ini tanggal ${this.year}`);
+        //     }
+        // }
+        // class Ebook extends Book {
+        //     constructor(title,author,year,harga) {
+        //         super(title,author,year);
+        //         this.harga = harga;
+        //     }
+        //     bookDetails(name) {
+        //         super.bookDetails(name);
+        //         console.log(`ini harga bukunya ${this.harga}`);
+        //     }
+        // }
+
+        // const buku = new Ebook('buku1','author1',2010,10000);
+        // buku.bookDetails();
+
+        // soal 6
+        // class Employee {
+        //     constructor(nama, gaji) {
+        //         this.nama = nama;
+        //         this.gaji = gaji;
+        //     }
+        //     hitungGajiTahunan() {
+        //         return `Nama pegawai: ${this.nama} \nGaji bulanan: ${this.gaji} \nManager: ${this.nama}`
+        //         // console.log(`Nama pegawai: ${this.nama}`);
+        //         // console.log(`Gaji bulanan: ${this.gaji}`);
+        //         // console.log(`Manager: ${this.nama}`);
+        //     }
+        // }
+        // class Manager extends Employee {
+        //     constructor(nama,gaji,departemen) {
+        //         super(nama,gaji);
+        //         this.departemen = departemen;
+        //     }
+        //     hitungGajiTahunan() {
+        //         super.hitungGajiTahunan();                
+        //         this.gaji *= 12;
+        //         this.gaji += this.gaji *=  0.1 ;
+        //         return `Departemen: ${this.departemen} \nBonus(10% dari gaji pokok): 0.1 \nGaji tahunan: ${this.gaji}`
+        //         // console.log(``);
+        //         // console.log(``);
+        //         // console.log(``);
+        //     }
+        // }
+        
+        // const manager = new Employee('aing maung', 1000000, 'Marketing');
+        // console.log(manager.hitungGajiTahunan());
+        // const pegawai = new Manager('aing maung', 1000000, 'Marketing');
+        // console.log(pegawai.hitungGajiTahunan());
+        // pegawai.hitungGajiTahunan();
+
+        // soal 7
+        class Product {
+            constructor(idProduk,name,price) {
+                this.idProduk = idProduk;
+                this.name = name;
+                this.price = price; 
+            }
+            totalHarga(qty) {
+                return this.price * qty;
+            }
+        }
+
+        class ElectronicProduk extends Product {
+            constructor(idProduk,name,price,masaGaransi) {
+                super(idProduk,name,price);
+                this.masaGaransi = masaGaransi;
+            }
+            totalHarga(qty) {
+                return super.totalHarga(qty);
+            }
+        }
+
+        const hp = new ElectronicProduk('1' , "Hp countous" , "999999" , "1 detik");
+
+        const totalHarga = hp.totalHarga(3);
+
+        console.log(`Id Produk: ${hp.idProduk} \nNama Produk: ${hp.name} \nHarga Barang: Rp.${hp.price} \nTotal Harga: Rp. ${totalHarga}${hp.masaGaransi} `);
+
+        // soal 8
+    //     class BankAccount {
+    //     constructor(nomorRekening, namaNasabah, saldo = 0) {
+    //         this.nomorRekening = nomorRekening;
+    //         this.namaNasabah = namaNasabah;
+    //         this.saldo = saldo;
+    //     }
+
+    //     setor(jumlah) {
+    //         if (jumlah > 0) {
+    //             this.saldo += jumlah;
+    //             console.log(`Berhasil menyetor ${jumlah}. Saldo saat ini: ${this.saldo}`);
+    //         } else {
+    //             console.log("Jumlah setoran harus lebih dari 0");
+    //         }
+    //     }
+
+    //     tarik(jumlah) {
+    //         if (jumlah > 0 && jumlah <= this.saldo) {
+    //             this.saldo -= jumlah;
+    //             console.log(`Berhasil menarik ${jumlah}. Saldo saat ini: ${this.saldo}`);
+    //         } else if (jumlah <= 0) {
+    //             console.log("Jumlah penarikan harus lebih dari 0");
+    //         } else {
+    //             console.log("Saldo tidak mencukupi");
+    //         }
+    //     }
+
+    //     transfer(jumlah, rekeningTujuan) {
+    //         if (jumlah > 0 && jumlah <= this.saldo) {
+    //             this.saldo -= jumlah;
+    //             rekeningTujuan.saldo += jumlah;
+    //             console.log(`Berhasil mentransfer ${jumlah} ke rekening ${rekeningTujuan.nomorRekening}`);
+    //             console.log(`Saldo saat ini: ${this.saldo}`);
+    //         } else if (jumlah <= 0) {
+    //             console.log("Jumlah transfer harus lebih dari 0");
+    //         } else {
+    //             console.log("Saldo tidak mencukupi untuk melakukan transfer");
+    //         }
+    //     }
+    // }
+
+    //     // Membuat beberapa instance kelas BankAccount
+    //     const rekening1 = new BankAccount("1234", "John Doe", 1000);
+    //     const rekening2 = new BankAccount("5678", "Jane Smith", 500);
+
+    //     // Melakukan operasi
+    //     console.log("Operasi pada rekening1:");
+    //     rekening1.setor(500);
+    //     rekening1.tarik(200);
+    //     rekening1.transfer(300, rekening2);
+
+    //     console.log("\nOperasi pada rekening2:");
+    //     rekening2.setor(100);
+    //     rekening2.tarik(50);
+    //     rekening2.transfer(200, rekening1);
+
+    //     console.log("\nSaldo akhir:");
+    //     console.log(`Rekening ${rekening1.nomorRekening}: ${rekening1.saldo}`);
+    //     console.log(`Rekening ${rekening2.nomorRekening}: ${rekening2.saldo}`);
+    </script>
+</body>
+</html>
